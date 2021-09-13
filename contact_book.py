@@ -26,7 +26,11 @@ class ContactBook:
             print("\nName\t\t\tPhone Number\n")
             print("---- ------\t\t----------")
             print("\nResult: No contacts avialable")
-        self.repeat()
+        choice = str(input("\n-Would you like to continue(y/n): "))
+        if choice.lower() == 'y':
+            self.repeat()
+        else:
+            self.terminate()
             
     def insert_contact(self):
         no_of_contacts = int(input("No of contacts you wants to insert: "))
@@ -35,7 +39,11 @@ class ContactBook:
             phone_number = input("Phone Number: ")
             self.names.append(name)
             self.phone_numbers.append(phone_number)
-        self.repeat()
+        choice = str(input("\n-Would you like to continue(y/n): "))
+        if choice.lower() == 'y':
+            self.repeat()
+        else:
+            self.terminate()
             
     def search_contact(self):
         if len(self.names) > 0:
@@ -52,12 +60,16 @@ class ContactBook:
             print("\nName\t\t\tPhone Number\n")
             print("---- ------\t\t----------")
             print("\nResult: No contacts exists to search")
+        choice = str(input("\n-Would you like to continue(y/n): "))
+        if choice.lower() == 'y':
+            self.repeat()
+        else:
+            self.terminate()
         
     def terminate(self):
         return None
     
     def repeat(self):
-        print("\n")
         print("-----------------------------------".center(35))
         print("   Operations")
         print("1. Display Contact Book\n2. Insert contacts\n3. Search contact by name or number\n4. exit")
