@@ -1,9 +1,10 @@
+# ContactBook class 
 class ContactBook:
     def __init__(self):
         self.names = []
         self.phone_numbers = []
         
-    def contactBook(self):
+    def contactBook(self): #contactbook main screen
         print("*****Welcome to Contact Book****".center(35))
         if (len(self.names) > 0):
             print("\nName\t\t\tPhone Number\n")
@@ -15,7 +16,7 @@ class ContactBook:
         print("Which operation would you like to perform: ")
         self.repeat()
         
-    def display_contact(self):
+    def display_contact(self): #to display contacts only
         print("*****Contacts****".center(25))
         if (len(self.names) > 0):
             print("\nName\t\t\tPhone Number\n")
@@ -32,7 +33,7 @@ class ContactBook:
         else:
             self.terminate()
             
-    def insert_contact(self):
+    def insert_contact(self): # to insert contacts
         no_of_contacts = int(input("No of contacts you wants to insert: "))
         for _ in range(no_of_contacts):
             name = input("Name: ")
@@ -45,7 +46,7 @@ class ContactBook:
         else:
             self.terminate()
             
-    def search_contact(self):
+    def search_contact(self): # to search contacts by name or phone number
         if len(self.names) > 0:
             search_term = input("\nEnter search term: ")
 
@@ -66,10 +67,10 @@ class ContactBook:
         else:
             self.terminate()
         
-    def terminate(self):
+    def terminate(self): # terminate the program
         return None
     
-    def repeat(self):
+    def repeat(self): # for repeating the program
         print("-----------------------------------".center(35))
         print("   Operations")
         print("1. Display Contact Book\n2. Insert contacts\n3. Search contact by name or number\n4. exit")
@@ -86,10 +87,8 @@ class ContactBook:
             print("Not valid input!!!")
             self.repeat()
             
-    def previousMove(self):
-        pass
-    
-            
+
+# Driver Code
 if __name__=="__main__":
     cb = ContactBook()
     cb.contactBook()
